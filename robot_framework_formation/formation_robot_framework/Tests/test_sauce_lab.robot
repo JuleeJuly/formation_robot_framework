@@ -15,3 +15,11 @@ Se Connecter Avec Un Compte Verrouille
     Connexion    ${USERNAME}[nok]    ${PASSWORD}
     #Verifier Message D Erreur Connexion
 
+Passer Une Commande
+    [Documentation]    Passer une commande
+    Open Sauce
+    Connexion    ${USERNAME}[ok]    ${PASSWORD}
+    Trier Liste    hilo
+    FOR    ${$index}    IN    0 1
+        Ajouter Produit Au Panier ${$index}
+    END

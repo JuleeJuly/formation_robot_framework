@@ -27,3 +27,14 @@ Verifier Message D Erreur Connexion
     [Documentation]    Verifier le message d erreur de connexion
     Sleep    2s
     Element Should Be Visible    class=error-message-container error
+
+Trier Liste
+    [Documentation]    Trier la liste
+    [Arguments]    ${VALUE}
+    Select From List By Value    class=product_sort_container    ${VALUE}
+
+Ajouter Produit Au Panier
+    [Documentation]    Ajouter un produit au panier
+    [Arguments]    ${INDEX}
+    Click Element    //div/div/div[2]/div[2]/button
+    Sleep    2s

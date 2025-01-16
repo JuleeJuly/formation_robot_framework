@@ -1,61 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-16T16:31:14.815340" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-16T16:51:23.782945" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot Framework Formation" source="C:\Users\Administrateur\Desktop\robot_framework_formation">
 <suite id="s1-s1" name="Formation Robot Framework" source="C:\Users\Administrateur\Desktop\robot_framework_formation\formation_robot_framework">
 <suite id="s1-s1-s1" name="Tests" source="C:\Users\Administrateur\Desktop\robot_framework_formation\formation_robot_framework\Tests">
 <suite id="s1-s1-s1-s1" name="Test Sauce Lab" source="C:\Users\Administrateur\Desktop\robot_framework_formation\formation_robot_framework\Tests\test_sauce_lab.robot">
-<test id="s1-s1-s1-s1-t1" name="Se Connecter Avec Un Compte Verrouille" line="12">
+<test id="s1-s1-s1-s1-t1" name="Passer Une Commande" line="18">
 <kw name="Open Sauce" owner="sauce_lab_keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-01-16T16:31:15.032053" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-01-16T16:51:24.018530" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-01-16T16:31:15.031646" elapsed="1.486243"/>
+<status status="PASS" start="2025-01-16T16:51:24.018241" elapsed="1.478678"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-01-16T16:31:16.518138" elapsed="0.035473"/>
+<status status="PASS" start="2025-01-16T16:51:25.497202" elapsed="0.035024"/>
 </kw>
 <doc>Open the browser</doc>
-<status status="PASS" start="2025-01-16T16:31:15.030885" elapsed="1.522914"/>
+<status status="PASS" start="2025-01-16T16:51:24.017456" elapsed="1.515346"/>
 </kw>
 <kw name="Connexion" owner="sauce_lab_keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-16T16:31:16.555106" level="INFO">Typing text 'locked_out_user' into text field 'id=user-name'.</msg>
+<msg time="2025-01-16T16:51:25.534792" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
 <arg>id=user-name</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-16T16:31:16.554665" elapsed="0.120431"/>
+<status status="PASS" start="2025-01-16T16:51:25.534304" elapsed="0.108984"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-16T16:31:16.675934" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<msg time="2025-01-16T16:51:25.644013" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-16T16:31:16.675412" elapsed="0.082225"/>
+<status status="PASS" start="2025-01-16T16:51:25.643571" elapsed="0.078799"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-01-16T16:31:16.758166" level="INFO">Clicking button 'id=login-button'.</msg>
+<msg time="2025-01-16T16:51:25.723153" level="INFO">Clicking button 'id=login-button'.</msg>
 <arg>id=login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-16T16:31:16.757847" elapsed="0.068308"/>
+<status status="PASS" start="2025-01-16T16:51:25.722628" elapsed="0.084645"/>
 </kw>
-<arg>${USERNAME}[nok]</arg>
+<arg>${USERNAME}[ok]</arg>
 <arg>${PASSWORD}</arg>
 <doc>Se connecter</doc>
-<status status="PASS" start="2025-01-16T16:31:16.554162" elapsed="0.272161"/>
+<status status="PASS" start="2025-01-16T16:51:25.533710" elapsed="0.273723"/>
 </kw>
-<doc>Se connecter avec le compte verrouille</doc>
-<status status="PASS" start="2025-01-16T16:31:15.030045" elapsed="1.796632"/>
+<kw name="Trier Liste" owner="sauce_lab_keywords">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-01-16T16:51:25.808451" level="INFO">Selecting options from selection list 'class=product_sort_container' by value hilo.</msg>
+<arg>class=product_sort_container</arg>
+<arg>${VALUE}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-01-16T16:51:25.808178" elapsed="0.063849"/>
+</kw>
+<arg>hilo</arg>
+<doc>Trier la liste</doc>
+<status status="PASS" start="2025-01-16T16:51:25.807792" elapsed="0.064398"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Ajouter Produit Au Panier" owner="sauce_lab_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-16T16:51:25.873322" level="INFO">Clicking element '//div/div/div[2]/div[2]/button'.</msg>
+<arg>//div/div/div[2]/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-16T16:51:25.873112" elapsed="0.047697"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-16T16:51:27.921599" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-16T16:51:25.920997" elapsed="2.001218"/>
+</kw>
+<doc>Ajouter un produit au panier</doc>
+<status status="PASS" start="2025-01-16T16:51:25.872854" elapsed="2.049649"/>
+</kw>
+<var name="${$index}">0 2</var>
+<status status="PASS" start="2025-01-16T16:51:25.872672" elapsed="2.049994"/>
+</iter>
+<var>${$index}</var>
+<value>0 2</value>
+<status status="PASS" start="2025-01-16T16:51:25.872409" elapsed="2.050399"/>
+</for>
+<doc>Passer une commande</doc>
+<status status="PASS" start="2025-01-16T16:51:24.016411" elapsed="3.907343"/>
 </test>
-<status status="PASS" start="2025-01-16T16:31:14.842346" elapsed="1.985984"/>
+<status status="PASS" start="2025-01-16T16:51:23.812513" elapsed="4.113854"/>
 </suite>
-<status status="PASS" start="2025-01-16T16:31:14.839251" elapsed="1.992064"/>
+<status status="PASS" start="2025-01-16T16:51:23.809881" elapsed="4.118305"/>
 </suite>
-<status status="PASS" start="2025-01-16T16:31:14.836502" elapsed="1.996117"/>
+<status status="PASS" start="2025-01-16T16:51:23.806741" elapsed="4.123403"/>
 </suite>
-<status status="PASS" start="2025-01-16T16:31:14.818894" elapsed="2.014893"/>
+<status status="PASS" start="2025-01-16T16:51:23.786869" elapsed="4.144682"/>
 </suite>
 <statistics>
 <total>
