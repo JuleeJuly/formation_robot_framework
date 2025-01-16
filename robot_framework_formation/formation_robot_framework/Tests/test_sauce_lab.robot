@@ -20,6 +20,9 @@ Passer Une Commande
     Open Sauce
     Connexion    ${USERNAME}[ok]    ${PASSWORD}
     Trier Liste    hilo
-    FOR    ${$index}    IN    0 1
-        Ajouter Produit Au Panier ${$index}
+    FOR    ${produit}    IN    @{PRODUITS}
+        Ajouter Produit Au Panier    ${produit}
     END
+    Ouvrir Le Panier
+    ${COMPTEUR}=    Compter Quantite Panier   ${PRODUITS}
+    Should Be Equal    (integer)${COMPTEUR}    (integer)2

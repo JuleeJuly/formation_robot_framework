@@ -12,29 +12,46 @@ Open Sauce
 Connexion
     [Documentation]    Se connecter
     [Arguments]    ${USERNAME}    ${PASSWORD}
-    Input Text    id=user-name    ${USERNAME}
-    Input Text    id=password    ${PASSWORD}
-    Click Button    id=login-button
+    Input Text    ${CHAMP_USER}    ${USERNAME}
+    Input Text    ${CHAMP_PASSWORD}    ${PASSWORD}
+    Click Button    ${BOUTON_LOGIN}
 
 Deconnexion
     [Documentation]    Se deconnecter
-    Click Button    id=react-burger-menu-btn
+    Click Button    ${BURGER_MENU}
     Sleep    2s
-    Click Element    id=logout_sidebar_link
-    Wait Until Element Is Visible    id=login-button    10s
+    Click Element    ${BOUTON_DECONNEXION}
+    Wait Until Element Is Visible    ${BOUTON_LOGIN}    10s
 
 Verifier Message D Erreur Connexion
     [Documentation]    Verifier le message d erreur de connexion
     Sleep    2s
-    Element Should Be Visible    class=error-message-container error
+    Element Should Be Visible    ${ERROR_CONNEXION}
 
 Trier Liste
     [Documentation]    Trier la liste
     [Arguments]    ${VALUE}
-    Select From List By Value    class=product_sort_container    ${VALUE}
+    Select From List By Value    ${BOUTON_TRIER}    ${VALUE}
 
 Ajouter Produit Au Panier
     [Documentation]    Ajouter un produit au panier
-    [Arguments]    ${INDEX}
-    Click Element    //div/div/div[2]/div[2]/button
+    [Arguments]    ${produit}
+    ${BOUTON_AJOUTER}=    Set Variable    //div[@class='inventory_list']/div[${produit}]//button[@class='btn_primary btn_inventory']
+    Wait Until Element Is Visible    ${BOUTON_AJOUTER}    10s
+    Click Element    ${BOUTON_AJOUTER}
     Sleep    2s
+
+Ouvrir Le Panier
+    [Documentation]    Ouvrir le panier
+    Click Element    ${BOUTON_PANIER}
+
+Compter Quantite Panier
+    [Documentation]    Compter la quantite de produit dans le panier
+    [Arguments]    ${PRODUITS}
+    ${COMPTEUR}=    Set Variable    0
+    FOR    ${produit}    IN    @{PRODUITS}
+        ${QUANTITE}=    Set Variable    //div[@class='cart_list']/div[@class='cart_item'][${produit}]//div[@class='cart_quantity']
+        Element Should Be Visible    ${QUANTITE}
+        ${COMPTEUR}=    Evaluate    ${COMPTEUR}+1
+    END
+    RETURN    ${COMPTEUR}
