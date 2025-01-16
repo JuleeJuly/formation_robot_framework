@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-16T16:31:14.815340" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Framework Formation" source="C:\Users\Administrateur\Desktop\robot_framework_formation">
+<suite id="s1-s1" name="Formation Robot Framework" source="C:\Users\Administrateur\Desktop\robot_framework_formation\formation_robot_framework">
+<suite id="s1-s1-s1" name="Tests" source="C:\Users\Administrateur\Desktop\robot_framework_formation\formation_robot_framework\Tests">
+<suite id="s1-s1-s1-s1" name="Test Sauce Lab" source="C:\Users\Administrateur\Desktop\robot_framework_formation\formation_robot_framework\Tests\test_sauce_lab.robot">
+<test id="s1-s1-s1-s1-t1" name="Se Connecter Avec Un Compte Verrouille" line="12">
+<kw name="Open Sauce" owner="sauce_lab_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-16T16:31:15.032053" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-16T16:31:15.031646" elapsed="1.486243"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-16T16:31:16.518138" elapsed="0.035473"/>
+</kw>
+<doc>Open the browser</doc>
+<status status="PASS" start="2025-01-16T16:31:15.030885" elapsed="1.522914"/>
+</kw>
+<kw name="Connexion" owner="sauce_lab_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-16T16:31:16.555106" level="INFO">Typing text 'locked_out_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-16T16:31:16.554665" elapsed="0.120431"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-16T16:31:16.675934" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-16T16:31:16.675412" elapsed="0.082225"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-16T16:31:16.758166" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-16T16:31:16.757847" elapsed="0.068308"/>
+</kw>
+<arg>${USERNAME}[nok]</arg>
+<arg>${PASSWORD}</arg>
+<doc>Se connecter</doc>
+<status status="PASS" start="2025-01-16T16:31:16.554162" elapsed="0.272161"/>
+</kw>
+<doc>Se connecter avec le compte verrouille</doc>
+<status status="PASS" start="2025-01-16T16:31:15.030045" elapsed="1.796632"/>
+</test>
+<status status="PASS" start="2025-01-16T16:31:14.842346" elapsed="1.985984"/>
+</suite>
+<status status="PASS" start="2025-01-16T16:31:14.839251" elapsed="1.992064"/>
+</suite>
+<status status="PASS" start="2025-01-16T16:31:14.836502" elapsed="1.996117"/>
+</suite>
+<status status="PASS" start="2025-01-16T16:31:14.818894" elapsed="2.014893"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robot Framework Formation" id="s1" pass="1" fail="0" skip="0">Robot Framework Formation</stat>
+<stat name="Formation Robot Framework" id="s1-s1" pass="1" fail="0" skip="0">Robot Framework Formation.Formation Robot Framework</stat>
+<stat name="Tests" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot Framework Formation.Formation Robot Framework.Tests</stat>
+<stat name="Test Sauce Lab" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Robot Framework Formation.Formation Robot Framework.Tests.Test Sauce Lab</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
