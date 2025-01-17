@@ -12,3 +12,14 @@ ${BURGER_MENU}    id=react-burger-menu-btn
 ${PASSWORD}    secret_sauce
 @{PRODUITS}    1    2
 ${BOUTON_PANIER}    class=shopping_cart_link
+${BOUTON_CHECKOUT}    class=checkout_button
+${CHAMP_FIRSTNAME}    id=first-name
+${CHAMP_LASTNAME}    id=last-name
+${CHAMP_POSTALCODE}    id=postal-code
+${BOUTON_CONTINUE}    //input[@type="submit"]
+${BOUTON_FINISH}    //a[@href="./checkout-complete.html"]
+${SOUSTOTAL_CHECKOUT}    class=summary_subtotal_label
+${FRAIS_CHECKOUT}    class=summary_tax_label
+${TOTAL_CHECKOUT}    class=summary_total_label
+${TITLE_VALIDE}    //h2
+${MESSAGE_TILE_VALIDE}    THANK YOU FOR YOUR ORDER

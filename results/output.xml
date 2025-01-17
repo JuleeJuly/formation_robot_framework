@@ -1,236 +1,302 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-16T22:12:02.039085" rpa="false" schemaversion="5">
-<suite id="s1" name="Formation Robot Framework" source="C:\Users\julie\Desktop\testing\robotframework_formation\formation_robot_framework">
-<suite id="s1-s1" name="Robot Framework Formation" source="C:\Users\julie\Desktop\testing\robotframework_formation\formation_robot_framework\robot_framework_formation">
-<suite id="s1-s1-s1" name="Formation Robot Framework" source="C:\Users\julie\Desktop\testing\robotframework_formation\formation_robot_framework\robot_framework_formation\formation_robot_framework">
-<suite id="s1-s1-s1-s1" name="Tests" source="C:\Users\julie\Desktop\testing\robotframework_formation\formation_robot_framework\robot_framework_formation\formation_robot_framework\Tests">
-<suite id="s1-s1-s1-s1-s1" name="Test Sauce Lab" source="C:\Users\julie\Desktop\testing\robotframework_formation\formation_robot_framework\robot_framework_formation\formation_robot_framework\Tests\test_sauce_lab.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="Passer Une Commande" line="18">
-<kw name="Open Sauce" owner="sauce_lab_keywords">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-17T16:46:07.415374" rpa="false" schemaversion="5">
+<suite id="s1" name="Formation Robot Framework" source="C:\Users\Administrateur\Desktop\robotframework_form\formation_robot_framework">
+<suite id="s1-s1" name="Robot Framework Formation" source="C:\Users\Administrateur\Desktop\robotframework_form\formation_robot_framework\robot_framework_formation">
+<suite id="s1-s1-s1" name="Formation Robot Framework" source="C:\Users\Administrateur\Desktop\robotframework_form\formation_robot_framework\robot_framework_formation\formation_robot_framework">
+<suite id="s1-s1-s1-s1" name="Tests" source="C:\Users\Administrateur\Desktop\robotframework_form\formation_robot_framework\robot_framework_formation\formation_robot_framework\Tests">
+<suite id="s1-s1-s1-s1-s1" name="Test Demoqa" source="C:\Users\Administrateur\Desktop\robotframework_form\formation_robot_framework\robot_framework_formation\formation_robot_framework\Tests\test_demoqa.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Scenario: Vérifier le fonctionnement du date-picker" line="30">
+<kw name="Given Je Suis Sur La Page Date Picker" owner="demoqa_keywords">
+<kw name="Ouvrir Le Site" owner="demoqa_keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-01-16T22:12:02.223870" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/v1/index.html'.</msg>
+<msg time="2025-01-17T16:46:07.667069" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-01-16T22:12:02.223578" elapsed="1.248956"/>
+<status status="PASS" start="2025-01-17T16:46:07.666701" elapsed="1.985485"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-01-16T22:12:03.472794" elapsed="0.026644"/>
+<status status="PASS" start="2025-01-17T16:46:09.652452" elapsed="0.032477"/>
 </kw>
-<doc>Open the browser</doc>
-<status status="PASS" start="2025-01-16T22:12:02.222887" elapsed="1.276725"/>
+<doc>Ouvrir le site sur le navigateur</doc>
+<status status="PASS" start="2025-01-17T16:46:07.666323" elapsed="2.018841"/>
 </kw>
-<kw name="Connexion" owner="sauce_lab_keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-16T22:12:03.500863" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
-<arg>${CHAMP_USER}</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-16T22:12:03.500419" elapsed="0.065447"/>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:09.685732" level="INFO">Opening url 'https://demoqa.com/date-picker'</msg>
+<arg>${LIEN_DATE_PICKER}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-17T16:46:09.685354" elapsed="0.383621"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-16T22:12:03.566550" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
-<arg>${CHAMP_PASSWORD}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-16T22:12:03.566096" elapsed="0.050036"/>
+<doc>Se rendre sur la page date picker</doc>
+<status status="PASS" start="2025-01-17T16:46:07.665812" elapsed="2.403324"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-01-16T22:12:03.616716" level="INFO">Clicking button 'id=login-button'.</msg>
-<arg>${BOUTON_LOGIN}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-16T22:12:03.616340" elapsed="0.156271"/>
+<kw name="When Je Choisis Un Creneau" owner="demoqa_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:10.070396" level="INFO">Clicking element 'id=dateAndTimePickerInput'.</msg>
+<arg>${DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.069932" elapsed="0.120990"/>
 </kw>
-<arg>${USERNAME}[ok]</arg>
-<arg>${PASSWORD}</arg>
-<doc>Se connecter</doc>
-<status status="PASS" start="2025-01-16T22:12:03.499914" elapsed="0.272876"/>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:10.191855" level="INFO">Executing JavaScript:
+window.scrollBy(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.191230" elapsed="0.012078"/>
 </kw>
-<kw name="Trier Liste" owner="sauce_lab_keywords">
-<kw name="Select From List By Value" owner="SeleniumLibrary">
-<msg time="2025-01-16T22:12:03.773873" level="INFO">Selecting options from selection list 'class=product_sort_container' by value hilo.</msg>
-<arg>${BOUTON_TRIER}</arg>
-<arg>${VALUE}</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<status status="PASS" start="2025-01-16T22:12:03.773550" elapsed="0.048643"/>
+<kw name="Click To Year" owner="demoqa_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:10.204961" level="INFO">Clicking element 'class=react-datepicker__year-read-view--selected-year'.</msg>
+<arg>${YEAR_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.204471" elapsed="0.128099"/>
 </kw>
-<arg>hilo</arg>
-<doc>Trier la liste</doc>
-<status status="PASS" start="2025-01-16T22:12:03.773120" elapsed="0.049249"/>
-</kw>
-<for flavor="IN">
-<iter>
-<kw name="Ajouter Produit Au Panier" owner="sauce_lab_keywords">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-01-16T22:12:03.823823" level="INFO">${BOUTON_AJOUTER} = //div[@class='inventory_list']/div[1]//button[@class='btn_primary btn_inventory']</msg>
-<var>${BOUTON_AJOUTER}</var>
-<arg>//div[@class='inventory_list']/div[${produit}]//button[@class='btn_primary btn_inventory']</arg>
+<msg time="2025-01-17T16:46:10.333455" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>False</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-01-16T22:12:03.823533" elapsed="0.000395"/>
+<status status="PASS" start="2025-01-17T16:46:10.332958" elapsed="0.001026"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${BOUTON_AJOUTER}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-16T22:12:03.824041" elapsed="0.012484"/>
+<while condition="${element_present}==False">
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:10.335426" level="INFO">Clicking element 'class=react-datepicker__year-option'.</msg>
+<arg>${BTN_YEAR_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.334978" elapsed="0.057736"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:10.536757" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-146.png"&gt;&lt;img src="selenium-screenshot-146.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-17T16:46:10.537171" level="FAIL">Element with locator '//div[.='2035']' not found.</msg>
+<arg>//div[.='${ANNEE}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-17T16:46:10.393336" elapsed="0.147109">Element with locator '//div[.='2035']' not found.</status>
+</kw>
+<msg time="2025-01-17T16:46:10.540649" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//div[.='${ANNEE}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.392957" elapsed="0.147845"/>
+</kw>
+<status status="PASS" start="2025-01-17T16:46:10.334245" elapsed="0.206648"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:10.541763" level="INFO">Clicking element 'class=react-datepicker__year-option'.</msg>
+<arg>${BTN_YEAR_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.541342" elapsed="0.096304"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:10.773367" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-147.png"&gt;&lt;img src="selenium-screenshot-147.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-17T16:46:10.773908" level="FAIL">Element with locator '//div[.='2035']' not found.</msg>
+<arg>//div[.='${ANNEE}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-17T16:46:10.638374" elapsed="0.137798">Element with locator '//div[.='2035']' not found.</status>
+</kw>
+<msg time="2025-01-17T16:46:10.776465" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//div[.='${ANNEE}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.637909" elapsed="0.138837"/>
+</kw>
+<status status="PASS" start="2025-01-17T16:46:10.540943" elapsed="0.235992"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:10.777828" level="INFO">Clicking element 'class=react-datepicker__year-option'.</msg>
+<arg>${BTN_YEAR_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.777426" elapsed="0.044032"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:10.952004" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-148.png"&gt;&lt;img src="selenium-screenshot-148.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-17T16:46:10.952614" level="FAIL">Element with locator '//div[.='2035']' not found.</msg>
+<arg>//div[.='${ANNEE}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-17T16:46:10.822429" elapsed="0.131678">Element with locator '//div[.='2035']' not found.</status>
+</kw>
+<msg time="2025-01-17T16:46:10.954387" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//div[.='${ANNEE}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.821764" elapsed="0.133088"/>
+</kw>
+<status status="PASS" start="2025-01-17T16:46:10.777015" elapsed="0.178064"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:10.956341" level="INFO">Clicking element 'class=react-datepicker__year-option'.</msg>
+<arg>${BTN_YEAR_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.955857" elapsed="0.040966"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:11.118717" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-149.png"&gt;&lt;img src="selenium-screenshot-149.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-17T16:46:11.119016" level="FAIL">Element with locator '//div[.='2035']' not found.</msg>
+<arg>//div[.='${ANNEE}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-17T16:46:10.997907" elapsed="0.122632">Element with locator '//div[.='2035']' not found.</status>
+</kw>
+<msg time="2025-01-17T16:46:11.120775" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//div[.='${ANNEE}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-17T16:46:10.997200" elapsed="0.123713"/>
+</kw>
+<status status="PASS" start="2025-01-17T16:46:10.955195" elapsed="0.165844"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:11.122272" level="INFO">Clicking element 'class=react-datepicker__year-option'.</msg>
+<arg>${BTN_YEAR_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:11.121553" elapsed="0.074307"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:11.230135" level="INFO">Element '//div[.='2035']' is displayed.</msg>
+<arg>//div[.='${ANNEE}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-17T16:46:11.196429" elapsed="0.033928"/>
+</kw>
+<msg time="2025-01-17T16:46:11.230510" level="INFO">${element_present} = True</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//div[.='${ANNEE}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-17T16:46:11.196085" elapsed="0.034612"/>
+</kw>
+<status status="PASS" start="2025-01-17T16:46:11.121079" elapsed="0.109732"/>
+</iter>
+<status status="PASS" start="2025-01-17T16:46:10.334242" elapsed="0.896733"/>
+</while>
+<arg>${ANNEE}</arg>
+<doc>Clique jusqu'a trouver l'annee passé en parametre</doc>
+<status status="PASS" start="2025-01-17T16:46:10.203872" elapsed="1.027200"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-01-16T22:12:03.837042" level="INFO">Clicking element '//div[@class='inventory_list']/div[1]//button[@class='btn_primary btn_inventory']'.</msg>
-<arg>${BOUTON_AJOUTER}</arg>
+<msg time="2025-01-17T16:46:11.231661" level="INFO">Clicking element '//div[.='2035']'.</msg>
+<arg>//div[.='${ANNEE}']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-16T22:12:03.836712" elapsed="0.033839"/>
+<status status="PASS" start="2025-01-17T16:46:11.231212" elapsed="0.050303"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:11.282057" level="INFO">Clicking element 'class=react-datepicker__month-read-view'.</msg>
+<arg>${MONTH_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:11.281705" elapsed="0.052603"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:11.334862" level="INFO">Clicking element '//div[.='November']'.</msg>
+<arg>//div[.='${MOIS}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:11.334509" elapsed="0.050773"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:11.385831" level="INFO">Clicking element '//div[@class='react-datepicker__month']//div[@class='react-datepicker__week']//div[contains(text(), '5')]'.</msg>
+<arg>//div[@class='react-datepicker__month']//div[@class='react-datepicker__week']//div[contains(text(), '${JOUR}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:11.385487" elapsed="0.057336"/>
+</kw>
+<kw name="Click To Time" owner="demoqa_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-17T16:46:11.444128" level="INFO">${element_present2} = False</msg>
+<var>${element_present2}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-17T16:46:11.443832" elapsed="0.000548"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-01-16T22:12:05.871600" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
+<msg time="2025-01-17T16:46:12.445577" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-01-16T22:12:03.870751" elapsed="2.001152"/>
+<status status="PASS" start="2025-01-17T16:46:11.444559" elapsed="1.001498"/>
 </kw>
-<arg>${produit}</arg>
-<doc>Ajouter un produit au panier</doc>
-<status status="PASS" start="2025-01-16T22:12:03.823169" elapsed="2.048885"/>
-</kw>
-<var name="${produit}">1</var>
-<status status="PASS" start="2025-01-16T22:12:03.822929" elapsed="2.049205"/>
-</iter>
+<while condition="${element_present2}==False">
 <iter>
-<kw name="Ajouter Produit Au Panier" owner="sauce_lab_keywords">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-01-16T22:12:05.873181" level="INFO">${BOUTON_AJOUTER} = //div[@class='inventory_list']/div[2]//button[@class='btn_primary btn_inventory']</msg>
-<var>${BOUTON_AJOUTER}</var>
-<arg>//div[@class='inventory_list']/div[${produit}]//button[@class='btn_primary btn_inventory']</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-01-16T22:12:05.872935" elapsed="0.000326"/>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:12.447762" level="INFO">Executing JavaScript:
+document.getElementsByClassName('react-datepicker__time-list')[0].scrollBy(0, 1000);
+Without any arguments.</msg>
+<arg>document.getElementsByClassName('react-datepicker__time-list')[0].scrollBy(0, 1000);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-01-17T16:46:12.446963" elapsed="0.008550"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${BOUTON_AJOUTER}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-16T22:12:05.873368" elapsed="0.010490"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-01-16T22:12:05.884256" level="INFO">Clicking element '//div[@class='inventory_list']/div[2]//button[@class='btn_primary btn_inventory']'.</msg>
-<arg>${BOUTON_AJOUTER}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-16T22:12:05.883993" elapsed="0.027687"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-01-16T22:12:07.912397" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-01-16T22:12:05.911874" elapsed="2.000848"/>
-</kw>
-<arg>${produit}</arg>
-<doc>Ajouter un produit au panier</doc>
-<status status="PASS" start="2025-01-16T22:12:05.872576" elapsed="2.040294"/>
-</kw>
-<var name="${produit}">2</var>
-<status status="PASS" start="2025-01-16T22:12:05.872286" elapsed="2.040650"/>
-</iter>
-<var>${produit}</var>
-<value>@{PRODUITS}</value>
-<status status="PASS" start="2025-01-16T22:12:03.822581" elapsed="4.090415"/>
-</for>
-<kw name="Ouvrir Le Panier" owner="sauce_lab_keywords">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-01-16T22:12:07.913969" level="INFO">Clicking element 'class=shopping_cart_link'.</msg>
-<arg>${BOUTON_PANIER}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-16T22:12:07.913683" elapsed="0.062923"/>
-</kw>
-<doc>Ouvrir le panier</doc>
-<status status="PASS" start="2025-01-16T22:12:07.913269" elapsed="0.063504"/>
-</kw>
-<kw name="Compter Quantite Panier" owner="sauce_lab_keywords">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-01-16T22:12:07.977788" level="INFO">${COMPTEUR} = 0</msg>
-<var>${COMPTEUR}</var>
-<arg>0</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-01-16T22:12:07.977552" elapsed="0.000401"/>
-</kw>
-<for flavor="IN">
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-01-16T22:12:07.978891" level="INFO">${QUANTITE} = //div[@class='cart_list']/div[@class='cart_item'][1]//div[@class='cart_quantity']</msg>
-<var>${QUANTITE}</var>
-<arg>//div[@class='cart_list']/div[@class='cart_item'][${produit}]//div[@class='cart_quantity']</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-01-16T22:12:07.978615" elapsed="0.000372"/>
-</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-01-16T22:12:07.990347" level="INFO">Element '//div[@class='cart_list']/div[@class='cart_item'][1]//div[@class='cart_quantity']' is displayed.</msg>
-<arg>${QUANTITE}</arg>
+<msg time="2025-01-17T16:46:12.473686" level="INFO">Element '//li[.='23:45']' is displayed.</msg>
+<arg>//li[.='${HEURE}']</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-16T22:12:07.979120" elapsed="0.011441"/>
+<status status="PASS" start="2025-01-17T16:46:12.456158" elapsed="0.017753"/>
 </kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-01-16T22:12:07.991093" level="INFO">${COMPTEUR} = 1</msg>
-<var>${COMPTEUR}</var>
-<arg>${COMPTEUR}+1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-01-16T22:12:07.990720" elapsed="0.000468"/>
+<msg time="2025-01-17T16:46:12.474069" level="INFO">${element_present2} = True</msg>
+<var>${element_present2}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//li[.='${HEURE}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-17T16:46:12.455748" elapsed="0.018522"/>
 </kw>
-<var name="${produit}">1</var>
-<status status="PASS" start="2025-01-16T22:12:07.978433" elapsed="0.012824"/>
+<status status="PASS" start="2025-01-17T16:46:12.446317" elapsed="0.028045"/>
 </iter>
-<iter>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-01-16T22:12:07.991745" level="INFO">${QUANTITE} = //div[@class='cart_list']/div[@class='cart_item'][2]//div[@class='cart_quantity']</msg>
-<var>${QUANTITE}</var>
-<arg>//div[@class='cart_list']/div[@class='cart_item'][${produit}]//div[@class='cart_quantity']</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-01-16T22:12:07.991519" elapsed="0.000693"/>
+<status status="PASS" start="2025-01-17T16:46:12.446314" elapsed="0.028190"/>
+</while>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-17T16:46:12.474985" level="INFO">Clicking element '//li[.='23:45']'.</msg>
+<arg>//li[.='${HEURE}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-17T16:46:12.474621" elapsed="0.049982"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-01-16T22:12:08.001552" level="INFO">Element '//div[@class='cart_list']/div[@class='cart_item'][2]//div[@class='cart_quantity']' is displayed.</msg>
-<arg>${QUANTITE}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-16T22:12:07.992321" elapsed="0.009412"/>
+<arg>${HEURE}</arg>
+<doc>Clique jusqu'a trouver l'heure passé en parametre</doc>
+<status status="PASS" start="2025-01-17T16:46:11.443129" elapsed="1.081646"/>
 </kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-01-16T22:12:08.002261" level="INFO">${COMPTEUR} = 2</msg>
-<var>${COMPTEUR}</var>
-<arg>${COMPTEUR}+1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-01-16T22:12:08.001897" elapsed="0.000450"/>
+<arg>5</arg>
+<arg>November</arg>
+<arg>2035</arg>
+<arg>23:45</arg>
+<doc>Choisir un créneau dans le champ</doc>
+<status status="PASS" start="2025-01-17T16:46:10.069496" elapsed="2.455369"/>
 </kw>
-<var name="${produit}">2</var>
-<status status="PASS" start="2025-01-16T22:12:07.991360" elapsed="0.011065"/>
-</iter>
-<var>${produit}</var>
-<value>@{PRODUITS}</value>
-<status status="PASS" start="2025-01-16T22:12:07.978176" elapsed="0.024309"/>
-</for>
-<return>
-<value>${COMPTEUR}</value>
-<status status="PASS" start="2025-01-16T22:12:08.002564" elapsed="0.000200"/>
-</return>
-<msg time="2025-01-16T22:12:08.002884" level="INFO">${COMPTEUR} = 2</msg>
-<var>${COMPTEUR}</var>
-<arg>${PRODUITS}</arg>
-<doc>Compter la quantite de produit dans le panier</doc>
-<status status="PASS" start="2025-01-16T22:12:07.977110" elapsed="0.025861"/>
+<kw name="Then La Selection S Affiche" owner="demoqa_keywords">
+<kw name="Fermer Le Site" owner="demoqa_keywords">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-17T16:46:12.525889" elapsed="2.129947"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>(integer)${COMPTEUR}</arg>
-<arg>(integer)2</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-01-16T22:12:08.003191" elapsed="0.000235"/>
+<doc>Ferme le site</doc>
+<status status="PASS" start="2025-01-17T16:46:12.525652" elapsed="2.130425"/>
 </kw>
-<doc>Passer une commande</doc>
-<status status="PASS" start="2025-01-16T22:12:02.222055" elapsed="5.781533"/>
+<arg>5</arg>
+<arg>November</arg>
+<arg>2035</arg>
+<arg>23:45</arg>
+<doc>Vérification des données</doc>
+<status status="PASS" start="2025-01-17T16:46:12.525186" elapsed="2.131127"/>
+</kw>
+<doc>Vérifier le fonctionnement du date-picker</doc>
+<status status="PASS" start="2025-01-17T16:46:07.664556" elapsed="6.992203"/>
 </test>
-<status status="PASS" start="2025-01-16T22:12:02.059162" elapsed="5.945084"/>
+<status status="PASS" start="2025-01-17T16:46:07.445751" elapsed="7.212226"/>
 </suite>
-<status status="PASS" start="2025-01-16T22:12:02.057762" elapsed="5.947487"/>
+<status status="PASS" start="2025-01-17T16:46:07.443839" elapsed="7.215732"/>
 </suite>
-<status status="PASS" start="2025-01-16T22:12:02.056595" elapsed="5.949453"/>
+<status status="PASS" start="2025-01-17T16:46:07.441430" elapsed="7.219504"/>
 </suite>
-<status status="PASS" start="2025-01-16T22:12:02.055198" elapsed="5.951626"/>
+<status status="PASS" start="2025-01-17T16:46:07.439205" elapsed="7.222686"/>
 </suite>
-<status status="PASS" start="2025-01-16T22:12:02.041841" elapsed="5.965722"/>
+<status status="PASS" start="2025-01-17T16:46:07.419327" elapsed="7.243569"/>
 </suite>
 <statistics>
 <total>
@@ -243,7 +309,7 @@
 <stat name="Robot Framework Formation" id="s1-s1" pass="1" fail="0" skip="0">Formation Robot Framework.Robot Framework Formation</stat>
 <stat name="Formation Robot Framework" id="s1-s1-s1" pass="1" fail="0" skip="0">Formation Robot Framework.Robot Framework Formation.Formation Robot Framework</stat>
 <stat name="Tests" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Formation Robot Framework.Robot Framework Formation.Formation Robot Framework.Tests</stat>
-<stat name="Test Sauce Lab" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">Formation Robot Framework.Robot Framework Formation.Formation Robot Framework.Tests.Test Sauce Lab</stat>
+<stat name="Test Demoqa" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">Formation Robot Framework.Robot Framework Formation.Formation Robot Framework.Tests.Test Demoqa</stat>
 </suite>
 </statistics>
 <errors>

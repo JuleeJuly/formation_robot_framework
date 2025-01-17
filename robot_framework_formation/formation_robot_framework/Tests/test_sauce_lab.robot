@@ -26,3 +26,5 @@ Passer Une Commande
     Ouvrir Le Panier
     ${COMPTEUR}=    Compter Quantite Panier   ${PRODUITS}
     Should Be Equal    (integer)${COMPTEUR}    (integer)2
+    Passer La Commande   Jean    Peuplu    62000
+    Fermer Le Site
