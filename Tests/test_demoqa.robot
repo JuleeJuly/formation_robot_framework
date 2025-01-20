@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation    This test suite contains test cases for the demoqa website.
 Resource    ../Ressources/keywords/demoqa_keywords.robot
 
 
@@ -9,32 +10,38 @@ Resource    ../Ressources/keywords/demoqa_keywords.robot
 
 
 *** Test Cases ***
-Scenario: Verifier la recherche de livre
-    [Documentation]    Verifier la recherche de livre
-    Given Je Suis Sur Le Site
-    When Je Recherche Un Livre     Designing Evolvable
-    Then Le Resultat De La Recherche Est Coherent    Glenn Block et al.
+Scenario: Verify book search
+    [Documentation]    Verify book search
+    Given I Am On The Website
+    When I Search For A Book      Designing Evolvable
+    Then The Search Result Is Relevant    Glenn Block et al.
 
-Scenario: Créer un compte et se connecter
-    [Documentation]    Créer un compte et se connecter
-    Given Je Suis Sur La Page Login
-    When Je Creer Un Compte    Toto    Toto    Toto    Toto123456!
-    Then Je Peux Me Connecter Avec Ce Compte     Einstein    123456!Albert
+Scenario: Create an account and log in
+    [Documentation]    Create an account and log in
+    Given I Am On The Login Page
+    When I Create An Account    Toto    Toto    Toto    Toto123456!
+    Then I Can Log In With This Account     Einstein    123456!Albert
 
-Scenario: Vérifier les intéractions
-    [Documentation]    Vérifier les intéractions
-    Given Je Suis Sur La Page Interactions
-    When Je Selectionne Differents Elements    @{LIST_ARGUMENTS}
-    Then La Selection Des Elements Est Coherente    @{LIST_ARGUMENTS}
+Scenario: Verify interactions
+    [Documentation]    Verify interactions
+    Given I Am On The Interactions Page
+    When I Select Different Elements    @{LIST_ARGUMENTS}
+    Then The Selection Of Elements Is Consistent    @{LIST_ARGUMENTS}
 
-Scenario: Vérifier le fonctionnement du date-picker
-    [Documentation]    Vérifier le fonctionnement du date-picker
-    Given Je Suis Sur La Page Date Picker
-    When Je Choisis Un Creneau    5    November    2035    23:45
-    Then La Selection S Affiche    5    November    2035    23:45
+Scenario: Verify the functionality of the date-picker
+    [Documentation]    Verify the functionality of the date-picker
+    Given I Am On The Date Picker Page
+    When I Choose A Slot    5    November    2035    23:45
+    Then The Selection Is Displayed    5    November    2035    23:45
 
-Scenario: Cocher les checkbox
-    [Documentation]    Vérifier le fonctionnement des checkbox
-    Given Je suis sur la page checkbox
-    When Je selectionne des elements
-    Then les elements sont selectionnes
+Scenario: Verify the alerts
+    [Documentation]    Verify the alerts
+    Given I Am On The Alert Page
+    When I Choose Different Options    JuLee
+    Then The Different Alerts Are Displayed
+
+Scenario: Check the checkboxes
+    [Documentation]    Verify the functionality of the checkboxes
+    Given I Am On The Checkbox Page
+    When I Select Some Elements
+    Then The Elements Are Selected

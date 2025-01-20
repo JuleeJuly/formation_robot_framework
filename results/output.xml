@@ -1,79 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-19T20:11:22.793724" rpa="false" schemaversion="5">
-<suite id="s1" name="Formation Robot Framework" source="C:\Users\julie\Desktop\formation_robot_framework">
-<suite id="s1-s1" name="Tests" source="C:\Users\julie\Desktop\formation_robot_framework\Tests">
-<suite id="s1-s1-s1" name="Test Demoqa" source="C:\Users\julie\Desktop\formation_robot_framework\Tests\test_demoqa.robot">
-<test id="s1-s1-s1-t1" name="Scenario: Verifier la recherche de livre" line="12">
-<kw name="Given Je Suis Sur Le Site" owner="demoqa_keywords">
-<kw name="Ouvrir Le Site" owner="demoqa_keywords">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-20T15:56:57.798102" rpa="false" schemaversion="5">
+<suite id="s1" name="Formation Robot Framework" source="C:\Users\Administrateur\Desktop\formation_robot_framework">
+<suite id="s1-s1" name="Tests" source="C:\Users\Administrateur\Desktop\formation_robot_framework\Tests">
+<suite id="s1-s1-s1" name="Test Demoqa" source="C:\Users\Administrateur\Desktop\formation_robot_framework\Tests\test_demoqa.robot">
+<test id="s1-s1-s1-t1" name="Scenario: Check the checkboxes" line="43">
+<kw name="Given I Am On The Checkbox Page" owner="demoqa_keywords">
+<kw name="Open The Site" owner="demoqa_keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-01-19T20:11:23.094285" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/'.</msg>
+<msg time="2025-01-20T15:56:58.027479" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-01-19T20:11:23.093774" elapsed="2.534281"/>
+<status status="PASS" start="2025-01-20T15:56:58.027227" elapsed="1.812752"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-01-19T20:11:25.628443" elapsed="0.037829"/>
+<status status="PASS" start="2025-01-20T15:56:59.840197" elapsed="0.031787"/>
 </kw>
-<doc>Ouvrir le site sur le navigateur</doc>
-<status status="PASS" start="2025-01-19T20:11:23.093231" elapsed="2.573388"/>
+<doc>Open the site in the browser</doc>
+<status status="PASS" start="2025-01-20T15:56:58.026944" elapsed="1.845216"/>
 </kw>
-<doc>Se rendre sur le site</doc>
-<status status="PASS" start="2025-01-19T20:11:23.092514" elapsed="2.574352"/>
-</kw>
-<kw name="When Je Recherche Un Livre" owner="demoqa_keywords">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-01-19T20:11:25.668812" level="INFO">Opening url 'https://demoqa.com/books'</msg>
-<arg>${LIEN_BOOK_STORE}</arg>
+<msg time="2025-01-20T15:56:59.872596" level="INFO">Opening url 'https://demoqa.com/checkbox'</msg>
+<arg>${CHECKBOX_LINK}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-01-19T20:11:25.668303" elapsed="0.465208"/>
+<status status="PASS" start="2025-01-20T15:56:59.872304" elapsed="0.529891"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-19T20:11:26.134477" level="INFO">Typing text 'Designing Evolvable' into text field 'id=searchBox'.</msg>
-<arg>${BOOK_SEARCH_BOX}</arg>
-<arg>${LIVRE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-19T20:11:26.133764" elapsed="0.303088"/>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-20T15:57:00.406843" level="INFO">Current location contains 'https://demoqa.com/checkbox'.</msg>
+<arg>${CHECKBOX_LINK}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.402399" elapsed="0.004612"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-01-19T20:11:27.438017" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-01-19T20:11:26.437266" elapsed="1.001409"/>
+<doc>Navigate to the checkbox page</doc>
+<status status="PASS" start="2025-01-20T15:56:58.024707" elapsed="2.382410"/>
 </kw>
-<arg>Designing Evolvable</arg>
-<doc>Chercher un livre</doc>
-<status status="PASS" start="2025-01-19T20:11:25.667511" elapsed="1.771636"/>
+<kw name="When I Select Some Elements" owner="demoqa_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T15:57:00.411137" level="INFO">Clicking element '//span[text()="Home"]'.</msg>
+<arg>${CHECKBOX_HOME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.410781" elapsed="0.119202"/>
 </kw>
-<kw name="Then Le Resultat De La Recherche Est Coherent" owner="demoqa_keywords">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>${BOOK_AUTEUR}</arg>
-<arg>${AUTEUR}</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2025-01-19T20:11:27.441628" elapsed="0.063629"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T15:57:00.530571" level="INFO">Clicking element '//button[@class="rct-option rct-option-expand-all"]'.</msg>
+<arg>${CHECKBOX_ALL_OPEN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.530195" elapsed="0.066715"/>
 </kw>
-<kw name="Fermer Le Site" owner="demoqa_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-01-20T15:57:00.598286" level="INFO">Executing JavaScript:
+window.scrollBy(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.597349" elapsed="0.006436"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T15:57:00.604460" level="INFO">Clicking element '//span[text()="Office"]'.</msg>
+<arg>${CHECKBOX_OFFICE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.604018" elapsed="0.060410"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T15:57:00.665191" level="INFO">Clicking element '//span[text()="Excel File.doc"]'.</msg>
+<arg>${CHECKBOX_EXCEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.664733" elapsed="0.054336"/>
+</kw>
+<doc>Select all boxes except excel file and office</doc>
+<status status="PASS" start="2025-01-20T15:57:00.408877" elapsed="0.310457"/>
+</kw>
+<kw name="Then The Elements Are Selected" owner="demoqa_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKBOX_TEXT_DESKTOP}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.723123" elapsed="0.015471"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKBOX_TEXT_NOTES}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.738779" elapsed="0.012482"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKBOX_TEXT_COMMANDS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.751449" elapsed="0.011571"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKBOX_TEXT_WORKSPACE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.763215" elapsed="0.011953"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKBOX_TEXT_REACT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.775354" elapsed="0.012629"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKBOX_TEXT_ANGULAR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.788196" elapsed="0.012074"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKBOX_TEXT_VEU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.800651" elapsed="0.012611"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKBOX_TEXT_WORDFILE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T15:57:00.813452" elapsed="0.013132"/>
+</kw>
+<kw name="Close The Site" owner="demoqa_keywords">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-01-19T20:11:27.506259" elapsed="2.198954"/>
+<status status="PASS" start="2025-01-20T15:57:00.827419" elapsed="2.122930"/>
 </kw>
-<doc>Ferme le site</doc>
-<status status="PASS" start="2025-01-19T20:11:27.505625" elapsed="2.199967"/>
+<doc>Close the site</doc>
+<status status="PASS" start="2025-01-20T15:57:00.826926" elapsed="2.124019"/>
 </kw>
-<arg>Glenn Block et al.</arg>
-<doc>verifier l'auteur du livre</doc>
-<status status="PASS" start="2025-01-19T20:11:27.440242" elapsed="2.265662"/>
+<doc>Check the selection of elements</doc>
+<status status="PASS" start="2025-01-20T15:57:00.721444" elapsed="2.229869"/>
 </kw>
-<doc>Verifier la recherche de livre</doc>
-<status status="PASS" start="2025-01-19T20:11:23.090788" elapsed="6.615760"/>
+<doc>Verify the functionality of the checkboxes</doc>
+<status status="PASS" start="2025-01-20T15:56:58.023447" elapsed="4.934968"/>
 </test>
-<status status="PASS" start="2025-01-19T20:11:22.829867" elapsed="6.879320"/>
+<doc>This test suite contains test cases for the demoqa website.</doc>
+<status status="PASS" start="2025-01-20T15:56:57.823930" elapsed="5.138736"/>
 </suite>
-<status status="PASS" start="2025-01-19T20:11:22.826521" elapsed="6.886101"/>
+<status status="PASS" start="2025-01-20T15:56:57.820741" elapsed="5.145512"/>
 </suite>
-<status status="PASS" start="2025-01-19T20:11:22.799844" elapsed="6.915546"/>
+<status status="PASS" start="2025-01-20T15:56:57.802037" elapsed="5.167060"/>
 </suite>
 <statistics>
 <total>
