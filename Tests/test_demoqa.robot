@@ -31,8 +31,8 @@ Scenario: Verify interactions
 Scenario: Verify the functionality of the date-picker
     [Documentation]    Verify the functionality of the date-picker
     Given I Am On The Date Picker Page
-    When I Choose A Slot    5    November    2035    23:45
-    Then The Selection Is Displayed    5    November    2035    23:45
+    When I Choose A Slot    5    November    2035    00:30
+    Then The Selection Is Displayed    5    November    2035    00:30
 
 Scenario: Verify the alerts
     [Documentation]    Verify the alerts

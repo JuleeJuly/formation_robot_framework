@@ -1,14 +1,11 @@
 *** Settings ***
+Documentation    This suite tests adding multiple products to the cart on Decathlon
 Resource    ../Ressources/keywords/decathlon_keywords.robot
 
 
 *** Test Cases ***
-Ajouter Plusieurs Produits Au Panier
-    [Documentation]    Ajouter plusieurs produits au panier
-    Open Decathlon
-    Accepter Les Cookies    "accept"
-    FOR    ${index}    IN RANGE    0    2
-        Rechercher Un Produit
-        Acceder Page Produit
-        Ajouter Au Panier
-    END
+Scenario: Add multiple products to the cart
+    [Documentation]    Add multiple products to the cart
+    Given I Am On The Decathlon Website    "accept"
+    When I Add Multiple Products To The Cart
+    Then The Products Are In My Cart

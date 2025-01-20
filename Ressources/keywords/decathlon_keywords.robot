@@ -1,37 +1,60 @@
 *** Settings ***
+Documentation    This suite contains keywords for interacting with the Decathlon website.
 Resource    ../../Ressources/library.resource
 Resource    ../../Ressources/variables/decathlon_variables.robot
 
 
 *** Keywords ***
+I Am On The Decathlon Website
+    [Documentation]    I Am On The Decathlon Website
+    [Arguments]    ${ACTION}
+    Open Decathlon
+    Accept Cookies    ${ACTION}
+
+I Add Multiple Products To The Cart
+    [Documentation]    Add multiple products to cart
+    FOR    ${PRODUCT}    IN    @{PRODUCTS}
+        Search For A Product    ${PRODUCT}
+        Access Product Page
+        Add To Cart
+    END
+
+The Products Are In My Cart
+    [Documentation]    Check that the products are in the cart
+    Close Browser
+
 Open Decathlon
     [Documentation]    Open the browser
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
 
-Accepter Les Cookies
+Accept Cookies
     [Documentation]    Accept cookies
-    [Arguments]    ${ACTIONS}
-    IF    ${ACTIONS} == "accept"
+    [Arguments]    ${ACTION}
+    IF    ${ACTION} == "accept"
         Click Button    ${COOKIE}[accept]
-    ELSE IF    ${ACTIONS} == "refuse"
+    ELSE IF    ${ACTION} == "refuse"
         Click Button    ${COOKIE}[refuse]
     ELSE
-        Click Button    ${COOKIE}[personnaliser]
+        Click Button    ${COOKIE}[personalize]
     END
 
-Rechercher Un Produit
+Search For A Product
     [Documentation]    Search a product
-    Input Text    ${BARRE_RECHERCHE}    ${PRODUCT}
-    Press Keys    ${BARRE_RECHERCHE}    ${APPUI_ENTREE}
-    Sleep    2s
+    [Arguments]    ${PRODUCT}
+    Wait Until Element Is Visible    ${SEARCH_BAR}    10s
+    Input Text    ${SEARCH_BAR}    ${PRODUCT}
+    Sleep    1s
+    Press Keys    ${SEARCH_BAR}    ${CLICK_ENTER}
+    Sleep    1s
 
-Acceder Page Produit
+Access Product Page
     [Documentation]    Access product page
-    Sleep    2s
-    Click Element    ${LIEN_PAGE_PRODUIT}
-    Sleep    2s
+    #Wait Until Element Is Visible    ${PRODUCT_PAGE_LINK}    10s
+    Click Element    ${PRODUCT_PAGE_LINK}
+    Sleep    1s
 
-Ajouter Au Panier
+Add To Cart
     [Documentation]    Add to cart
-    Click Button    ${BTN_AJOUTER_PANIER}
+    Wait Until Element Is Visible    ${ADD_TO_CART_BUTTON}    10s
+    Click Button    ${ADD_TO_CART_BUTTON}

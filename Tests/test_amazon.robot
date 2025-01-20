@@ -1,8 +1,11 @@
 *** Settings ***
+Documentation    This suite tests Amazon functionalities
 Resource    ../Ressources/keywords/amazon_keywords.robot
-Resource    ../Ressources/variables/amazon_variables.robot
+
 
 *** Test Cases ***
-Test
-    Open amazon
-    Identification
+Scenario: Test the connection on the Amazon site
+    [Documentation]    Connection test
+    Given I Am On The Site
+    When I Log In
+    Then I Am Connected

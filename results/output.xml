@@ -1,137 +1,405 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-20T15:56:57.798102" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-20T16:37:09.448058" rpa="false" schemaversion="5">
 <suite id="s1" name="Formation Robot Framework" source="C:\Users\Administrateur\Desktop\formation_robot_framework">
 <suite id="s1-s1" name="Tests" source="C:\Users\Administrateur\Desktop\formation_robot_framework\Tests">
 <suite id="s1-s1-s1" name="Test Demoqa" source="C:\Users\Administrateur\Desktop\formation_robot_framework\Tests\test_demoqa.robot">
-<test id="s1-s1-s1-t1" name="Scenario: Check the checkboxes" line="43">
-<kw name="Given I Am On The Checkbox Page" owner="demoqa_keywords">
+<test id="s1-s1-s1-t1" name="Scenario: Verify the functionality of the date-picker" line="31">
+<kw name="Given I Am On The Date Picker Page" owner="demoqa_keywords">
 <kw name="Open The Site" owner="demoqa_keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-01-20T15:56:58.027479" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/'.</msg>
+<msg time="2025-01-20T16:37:09.673147" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-01-20T15:56:58.027227" elapsed="1.812752"/>
+<status status="PASS" start="2025-01-20T16:37:09.672754" elapsed="2.252259"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-01-20T15:56:59.840197" elapsed="0.031787"/>
+<status status="PASS" start="2025-01-20T16:37:11.925322" elapsed="0.031137"/>
 </kw>
 <doc>Open the site in the browser</doc>
-<status status="PASS" start="2025-01-20T15:56:58.026944" elapsed="1.845216"/>
+<status status="PASS" start="2025-01-20T16:37:09.672409" elapsed="2.284249"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-01-20T15:56:59.872596" level="INFO">Opening url 'https://demoqa.com/checkbox'</msg>
-<arg>${CHECKBOX_LINK}</arg>
+<msg time="2025-01-20T16:37:11.957117" level="INFO">Opening url 'https://demoqa.com/date-picker'</msg>
+<arg>${DATE_PICKER_LINK}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-01-20T15:56:59.872304" elapsed="0.529891"/>
+<status status="PASS" start="2025-01-20T16:37:11.956809" elapsed="0.304271"/>
 </kw>
 <kw name="Location Should Contain" owner="SeleniumLibrary">
-<msg time="2025-01-20T15:57:00.406843" level="INFO">Current location contains 'https://demoqa.com/checkbox'.</msg>
-<arg>${CHECKBOX_LINK}</arg>
+<msg time="2025-01-20T16:37:12.265591" level="INFO">Current location contains 'https://demoqa.com/date-picker'.</msg>
+<arg>${DATE_PICKER_LINK}</arg>
 <doc>Verifies that the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.402399" elapsed="0.004612"/>
+<status status="PASS" start="2025-01-20T16:37:12.261312" elapsed="0.004505"/>
 </kw>
-<doc>Navigate to the checkbox page</doc>
-<status status="PASS" start="2025-01-20T15:56:58.024707" elapsed="2.382410"/>
+<doc>Navigate to the date picker page</doc>
+<status status="PASS" start="2025-01-20T16:37:09.670104" elapsed="2.595907"/>
 </kw>
-<kw name="When I Select Some Elements" owner="demoqa_keywords">
+<kw name="When I Choose A Slot" owner="demoqa_keywords">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${DATE_TIME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-01-20T16:37:12.271414" elapsed="0.021957"/>
+</kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-01-20T15:57:00.411137" level="INFO">Clicking element '//span[text()="Home"]'.</msg>
-<arg>${CHECKBOX_HOME}</arg>
+<msg time="2025-01-20T16:37:12.294107" level="INFO">Clicking element 'id=dateAndTimePickerInput'.</msg>
+<arg>${DATE_TIME_INPUT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.410781" elapsed="0.119202"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-01-20T15:57:00.530571" level="INFO">Clicking element '//button[@class="rct-option rct-option-expand-all"]'.</msg>
-<arg>${CHECKBOX_ALL_OPEN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.530195" elapsed="0.066715"/>
+<status status="PASS" start="2025-01-20T16:37:12.293668" elapsed="0.124120"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-01-20T15:57:00.598286" level="INFO">Executing JavaScript:
+<msg time="2025-01-20T16:37:12.418559" level="INFO">Executing JavaScript:
 window.scrollBy(0, 300)
 Without any arguments.</msg>
 <arg>window.scrollBy(0, 300)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.597349" elapsed="0.006436"/>
+<status status="PASS" start="2025-01-20T16:37:12.418045" elapsed="0.011562"/>
+</kw>
+<kw name="Click To Year" owner="demoqa_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${YEAR_DATE_TIME_INPUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T16:37:12.430418" elapsed="0.017066"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-01-20T15:57:00.604460" level="INFO">Clicking element '//span[text()="Office"]'.</msg>
-<arg>${CHECKBOX_OFFICE}</arg>
+<msg time="2025-01-20T16:37:12.448046" level="INFO">Clicking element 'class=react-datepicker__year-read-view--selected-year'.</msg>
+<arg>${YEAR_DATE_TIME_INPUT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.604018" elapsed="0.060410"/>
+<status status="PASS" start="2025-01-20T16:37:12.447699" elapsed="0.060641"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-20T16:37:12.508939" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-20T16:37:12.508578" elapsed="0.000596"/>
+</kw>
+<while condition="not ${element_present}">
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:12.511000" level="INFO">Clicking element 'class=react-datepicker__year-option'.</msg>
+<arg>${YEAR_OPTION_BUTTON_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T16:37:12.510145" elapsed="0.052639"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:12.675208" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-20T16:37:12.675587" level="FAIL">Element with locator '//div[.='2035']' not found.</msg>
+<arg>//div[.='${YEAR}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-20T16:37:12.563407" elapsed="0.114791">Element with locator '//div[.='2035']' not found.</status>
+</kw>
+<msg time="2025-01-20T16:37:12.678372" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//div[.='${YEAR}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-20T16:37:12.563024" elapsed="0.115474"/>
+</kw>
+<status status="PASS" start="2025-01-20T16:37:12.509358" elapsed="0.169231"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:12.679358" level="INFO">Clicking element 'class=react-datepicker__year-option'.</msg>
+<arg>${YEAR_OPTION_BUTTON_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T16:37:12.678932" elapsed="0.039254"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:12.856923" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-20T16:37:12.857227" level="FAIL">Element with locator '//div[.='2035']' not found.</msg>
+<arg>//div[.='${YEAR}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-20T16:37:12.718712" elapsed="0.139958">Element with locator '//div[.='2035']' not found.</status>
+</kw>
+<msg time="2025-01-20T16:37:12.858857" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//div[.='${YEAR}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-20T16:37:12.718402" elapsed="0.140585"/>
+</kw>
+<status status="PASS" start="2025-01-20T16:37:12.678633" elapsed="0.180490"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:12.859900" level="INFO">Clicking element 'class=react-datepicker__year-option'.</msg>
+<arg>${YEAR_OPTION_BUTTON_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T16:37:12.859630" elapsed="0.039550"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:13.008843" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-20T16:37:13.009164" level="FAIL">Element with locator '//div[.='2035']' not found.</msg>
+<arg>//div[.='${YEAR}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-20T16:37:12.900128" elapsed="0.110383">Element with locator '//div[.='2035']' not found.</status>
+</kw>
+<msg time="2025-01-20T16:37:13.010708" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//div[.='${YEAR}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-20T16:37:12.899550" elapsed="0.111276"/>
+</kw>
+<status status="PASS" start="2025-01-20T16:37:12.859200" elapsed="0.151716"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:13.011523" level="INFO">Clicking element 'class=react-datepicker__year-option'.</msg>
+<arg>${YEAR_OPTION_BUTTON_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T16:37:13.011243" elapsed="0.042295"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:13.172820" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-20T16:37:13.173146" level="FAIL">Element with locator '//div[.='2035']' not found.</msg>
+<arg>//div[.='${YEAR}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-20T16:37:13.054351" elapsed="0.120302">Element with locator '//div[.='2035']' not found.</status>
+</kw>
+<msg time="2025-01-20T16:37:13.174855" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//div[.='${YEAR}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-20T16:37:13.053871" elapsed="0.121112"/>
+</kw>
+<status status="PASS" start="2025-01-20T16:37:13.010965" elapsed="0.164126"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:13.175944" level="INFO">Clicking element 'class=react-datepicker__year-option'.</msg>
+<arg>${YEAR_OPTION_BUTTON_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T16:37:13.175469" elapsed="0.039724"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:13.227930" level="INFO">Element '//div[.='2035']' is displayed.</msg>
+<arg>//div[.='${YEAR}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T16:37:13.215749" elapsed="0.012377"/>
+</kw>
+<msg time="2025-01-20T16:37:13.228280" level="INFO">${element_present} = True</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//div[.='${YEAR}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-20T16:37:13.215448" elapsed="0.012928"/>
+</kw>
+<status status="PASS" start="2025-01-20T16:37:13.175138" elapsed="0.053338"/>
+</iter>
+<status status="PASS" start="2025-01-20T16:37:12.509355" elapsed="0.719256"/>
+</while>
+<arg>${YEAR}</arg>
+<doc>Choose the year in the date field</doc>
+<status status="PASS" start="2025-01-20T16:37:12.429946" elapsed="0.798747"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-01-20T15:57:00.665191" level="INFO">Clicking element '//span[text()="Excel File.doc"]'.</msg>
-<arg>${CHECKBOX_EXCEL}</arg>
+<msg time="2025-01-20T16:37:13.229146" level="INFO">Clicking element '//div[.='2035']'.</msg>
+<arg>//div[.='${YEAR}']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.664733" elapsed="0.054336"/>
+<status status="PASS" start="2025-01-20T16:37:13.228818" elapsed="0.049140"/>
 </kw>
-<doc>Select all boxes except excel file and office</doc>
-<status status="PASS" start="2025-01-20T15:57:00.408877" elapsed="0.310457"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:13.278820" level="INFO">Clicking element 'class=react-datepicker__month-read-view'.</msg>
+<arg>${MONTH_DATE_TIME_INPUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T16:37:13.278288" elapsed="0.074677"/>
 </kw>
-<kw name="Then The Elements Are Selected" owner="demoqa_keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${CHECKBOX_TEXT_DESKTOP}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.723123" elapsed="0.015471"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:13.353597" level="INFO">Clicking element '//div[.='November']'.</msg>
+<arg>//div[.='${MONTH}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T16:37:13.353193" elapsed="0.053027"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${CHECKBOX_TEXT_NOTES}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.738779" elapsed="0.012482"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:13.406777" level="INFO">Clicking element '//div[@class='react-datepicker__month']//div[@class='react-datepicker__week']//div[contains(text(), '5')]'.</msg>
+<arg>//div[@class='react-datepicker__month']//div[@class='react-datepicker__week']//div[contains(text(), '${DAY}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T16:37:13.406413" elapsed="0.054422"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${CHECKBOX_TEXT_COMMANDS}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.751449" elapsed="0.011571"/>
+<kw name="Click To Time" owner="demoqa_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-20T16:37:13.461790" level="INFO">${element_present} = False</msg>
+<var>${element_present}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-20T16:37:13.461539" elapsed="0.000402"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${CHECKBOX_TEXT_WORKSPACE}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.763215" elapsed="0.011953"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-20T16:37:14.463046" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-20T16:37:13.462075" elapsed="1.001375"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${CHECKBOX_TEXT_REACT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.775354" elapsed="0.012629"/>
+<while condition="not ${element_present}">
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:14.464525" level="INFO">Executing JavaScript:
+document.getElementsByClassName('react-datepicker__time-list')[0].scrollBy(0, 1000);
+Without any arguments.</msg>
+<arg>document.getElementsByClassName('react-datepicker__time-list')[0].scrollBy(0, 1000);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.464132" elapsed="0.005531"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${CHECKBOX_TEXT_ANGULAR}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.788196" elapsed="0.012074"/>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:14.483175" level="INFO">Element '//li[.='00:30']' is displayed.</msg>
+<arg>//li[.='${TIME}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.470260" elapsed="0.013193"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${CHECKBOX_TEXT_VEU}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.800651" elapsed="0.012611"/>
+<msg time="2025-01-20T16:37:14.483616" level="INFO">${element_present} = True</msg>
+<var>${element_present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>//li[.='${TIME}']</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.469941" elapsed="0.013884"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${CHECKBOX_TEXT_WORDFILE}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.813452" elapsed="0.013132"/>
+<status status="PASS" start="2025-01-20T16:37:14.463582" elapsed="0.020358"/>
+</iter>
+<status status="PASS" start="2025-01-20T16:37:14.463580" elapsed="0.020498"/>
+</while>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:14.484647" level="INFO">Clicking element '//li[.='00:30']'.</msg>
+<arg>//li[.='${TIME}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.484203" elapsed="0.046695"/>
+</kw>
+<arg>${TIME}</arg>
+<doc>Choose the time in the date field</doc>
+<status status="PASS" start="2025-01-20T16:37:13.461126" elapsed="1.069944"/>
+</kw>
+<arg>5</arg>
+<arg>November</arg>
+<arg>2035</arg>
+<arg>00:30</arg>
+<doc>Selects the year, month, day and time in the field</doc>
+<status status="PASS" start="2025-01-20T16:37:12.268879" elapsed="2.262289"/>
+</kw>
+<kw name="Then The Selection Is Displayed" owner="demoqa_keywords">
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-01-20T16:37:14.544839" level="INFO">${VALUE} = November 5, 2035 12:30 AM</msg>
+<var>${VALUE}</var>
+<arg>${DATE_TIME_INPUT}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.535302" elapsed="0.009715"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-20T16:37:14.545581" level="INFO">${MINUTES} = :30</msg>
+<var>${MINUTES}</var>
+<arg>'${TIME}[2:]'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.545205" elapsed="0.000531"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-20T16:37:14.546102" level="INFO">${HOUR} = 0</msg>
+<var>${HOUR}</var>
+<arg>${TIME}[:2]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.545855" elapsed="0.000384"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-20T16:37:14.546615" level="INFO">${MOMENT} = AM</msg>
+<var>${MOMENT}</var>
+<arg>AM</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.546381" elapsed="0.000403"/>
+</kw>
+<kw name="Convert To Number" owner="BuiltIn">
+<msg time="2025-01-20T16:37:14.547210" level="INFO">${HOUR} = 0.0</msg>
+<var>${HOUR}</var>
+<arg>${HOUR}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.546939" elapsed="0.000396"/>
+</kw>
+<if>
+<branch type="IF" condition="${HOUR} &lt; 1">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-20T16:37:14.548104" level="INFO">${HOUR} = 12.0</msg>
+<var>${HOUR}</var>
+<arg>${HOUR} + 12</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.547800" elapsed="0.000411"/>
+</kw>
+<status status="PASS" start="2025-01-20T16:37:14.547482" elapsed="0.000840"/>
+</branch>
+<branch type="ELSE IF" condition="${HOUR} == 12">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${MOMENT}</var>
+<arg>PM</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-01-20T16:37:14.548627" elapsed="0.000138"/>
+</kw>
+<status status="NOT RUN" start="2025-01-20T16:37:14.548371" elapsed="0.000458"/>
+</branch>
+<branch type="ELSE IF" condition="${HOUR} &gt; 12">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${HOUR}</var>
+<arg>${HOUR} - 12</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-01-20T16:37:14.549039" elapsed="0.000121"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${MOMENT}</var>
+<arg>PM</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-01-20T16:37:14.549255" elapsed="0.000142"/>
+</kw>
+<status status="NOT RUN" start="2025-01-20T16:37:14.548883" elapsed="0.000653"/>
+</branch>
+<status status="PASS" start="2025-01-20T16:37:14.547452" elapsed="0.002128"/>
+</if>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-20T16:37:14.550042" level="INFO">${HOUR} = 12</msg>
+<var>${HOUR}</var>
+<arg>round(${HOUR})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.549667" elapsed="0.000565"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-20T16:37:14.550712" level="INFO">${result} = November 5, 2035 12:30 AM</msg>
+<var>${result}</var>
+<arg>${MONTH} ${DAY}, ${YEAR} ${HOUR}${MINUTES} ${MOMENT}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.550381" elapsed="0.000489"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${VALUE}</arg>
+<arg>${result}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-01-20T16:37:14.550983" elapsed="0.000293"/>
 </kw>
 <kw name="Close The Site" owner="demoqa_keywords">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-01-20T15:57:00.827419" elapsed="2.122930"/>
+<status status="PASS" start="2025-01-20T16:37:14.551724" elapsed="2.130570"/>
 </kw>
 <doc>Close the site</doc>
-<status status="PASS" start="2025-01-20T15:57:00.826926" elapsed="2.124019"/>
+<status status="PASS" start="2025-01-20T16:37:14.551413" elapsed="2.131094"/>
 </kw>
-<doc>Check the selection of elements</doc>
-<status status="PASS" start="2025-01-20T15:57:00.721444" elapsed="2.229869"/>
+<arg>5</arg>
+<arg>November</arg>
+<arg>2035</arg>
+<arg>00:30</arg>
+<doc>Verify the data</doc>
+<status status="PASS" start="2025-01-20T16:37:14.533285" elapsed="2.149347"/>
 </kw>
-<doc>Verify the functionality of the checkboxes</doc>
-<status status="PASS" start="2025-01-20T15:56:58.023447" elapsed="4.934968"/>
+<doc>Verify the functionality of the date-picker</doc>
+<status status="PASS" start="2025-01-20T16:37:09.668949" elapsed="7.016991"/>
 </test>
 <doc>This test suite contains test cases for the demoqa website.</doc>
-<status status="PASS" start="2025-01-20T15:56:57.823930" elapsed="5.138736"/>
+<status status="PASS" start="2025-01-20T16:37:09.473320" elapsed="7.214330"/>
 </suite>
-<status status="PASS" start="2025-01-20T15:56:57.820741" elapsed="5.145512"/>
+<status status="PASS" start="2025-01-20T16:37:09.470709" elapsed="7.218850"/>
 </suite>
-<status status="PASS" start="2025-01-20T15:56:57.802037" elapsed="5.167060"/>
+<status status="PASS" start="2025-01-20T16:37:09.451650" elapsed="7.239432"/>
 </suite>
 <statistics>
 <total>
