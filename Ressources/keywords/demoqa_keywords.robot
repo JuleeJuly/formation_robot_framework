@@ -213,6 +213,7 @@ Validate Captcha
     Wait Until Element Is Enabled    ${CAPTCHA_ID}
     Click Element    ${CAPTCHA_ID}
     Unselect Frame
+    Execute JavaScript    ('document.getElementById("g-recaptcha-response").value = "fake_token";')
 
 Log In
     [Documentation]    Log in
