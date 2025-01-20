@@ -4,93 +4,123 @@ Resource    ../../Ressources/variables/sauce_lab_variables.robot
 
 
 *** Keywords ***
-Open Sauce
+I Am On The Saucedemo Website
     [Documentation]    Open the browser
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
 
-Connexion
-    [Documentation]    Se connecter
-    [Arguments]    ${USERNAME}    ${PASSWORD}
-    Input Text    ${CHAMP_USER}    ${USERNAME}
-    Input Text    ${CHAMP_PASSWORD}    ${PASSWORD}
-    Click Button    ${BOUTON_LOGIN}
+I Log In
+    [Documentation]    Log In
+    [Arguments]    ${PASSWORD}    ${USERNAME}
+    Input Text    ${FIELD_USERNAME}    ${USERNAME}
+    Input Text    ${FIELD_PASSWORD}    ${PASSWORD}
+    Click Button    ${BUTTON_LOGIN}
 
-Deconnexion
-    [Documentation]    Se deconnecter
+I Can Log Out
+    [Documentation]    Log out
     Click Button    ${BURGER_MENU}
     Sleep    1s
-    Click Element    ${BOUTON_DECONNEXION}
-    Wait Until Element Is Visible    ${BOUTON_LOGIN}    10s
+    Click Element    ${BUTTON_LOGOUT}
+    Wait Until Element Is Visible    ${BUTTON_LOGIN}    10s
+    Close The Site
 
-Verifier Message D Erreur Connexion
-    [Documentation]    Verifier le message d erreur de connexion
+I Am Not Logged In
+    [Documentation]    Verify the login error message
     Sleep    1s
-    Element Should Be Visible    ${ERROR_CONNEXION}
+    Element Should Be Visible    ${ERROR_MESSAGE}
+    Close The Site
 
-Trier Liste
-    [Documentation]    Trier la liste
-    [Arguments]    ${VALUE}
-    Select From List By Value    ${BOUTON_TRIER}    ${VALUE}
-
-Ajouter Produit Au Panier
-    [Documentation]    Ajouter un produit au panier
-    [Arguments]    ${produit}
-    ${BOUTON_AJOUTER}=    Set Variable    //div[@class='inventory_list']/div[${produit}]//button[@class='btn_primary btn_inventory']
-    Wait Until Element Is Visible    ${BOUTON_AJOUTER}    10s
-    Click Element    ${BOUTON_AJOUTER}
-    Sleep    1s
-
-Ouvrir Le Panier
-    [Documentation]    Ouvrir le panier
-    Click Element    ${BOUTON_PANIER}
-
-Compter Quantite Panier
-    [Documentation]    Compter la quantite de produit dans le panier
-    [Arguments]    ${PRODUITS}
-    ${COMPTEUR}=    Set Variable    0
-    FOR    ${produit}    IN    @{PRODUITS}
-        ${QUANTITE}=    Set Variable    //div[@class='cart_list']/div[@class='cart_item'][${produit}]//div[@class='cart_quantity']
-        Element Should Be Visible    ${QUANTITE}
-        ${qt}=    Get Text    ${QUANTITE}
-        ${COMPTEUR}=    Evaluate    ${COMPTEUR}+${qt}
+I Add Products To The Cart
+    [Documentation]    Ajouter les produits dans le panier
+    Sort List    hilo
+    FOR    ${PRODUCT}    IN    @{PRODUCTS}
+        Add Product To Cart    ${PRODUCT}
     END
-    RETURN    ${COMPTEUR}
+    Open Cart
+    ${COUNTER}=    Count Cart Quantity   ${PRODUCTS}
+    Should Be Equal    (integer)${COUNTER}    (integer)2
 
-Passer La Commande
-    [Documentation]    Passer la commande
+I Can Place An Order
+    [Documentation]    Je peux passer la commande
     [Arguments]    ${FIRSTNAME}    ${LASTNAME}    ${POSTALCODE}
-    Click Element    ${BOUTON_CHECKOUT}
-    Sleep    1s
-    Input Text    ${CHAMP_FIRSTNAME}    ${FIRSTNAME}
-    Input Text    ${CHAMP_LASTNAME}   ${LASTNAME}
-    Input Text    ${CHAMP_POSTALCODE}    ${POSTALCODE}
-    Click Button    ${BOUTON_CONTINUE}
-    ${TOTAL}=    Set Variable    0
-    ${TOT}=    Get Text    ${SOUSTOTAL_CHECKOUT}
-    ${TOT2}=    Evaluate    ${TOT}[13:]
-    #verifier les totaux et sous totaux
-    FOR    ${produit}    IN    @{PRODUITS}
-        ${PRIX}=    Set Variable    //div[@class='cart_list']/div[@class='cart_item'][${produit}]//div[@class='cart_item_label']//div[@class='inventory_item_price']
-        ${px}=    Get Text    ${PRIX}
-        Element Should Be Visible    ${PRIX}
-        ${px_modifiee}=    Evaluate    ${px}[1:]
-        ${TOTAL}=    Evaluate    ${TOTAL}+${px_modifiee}
-    END
-    Should Be Equal    (integer)${TOT2}    (integer)${TOTAL}
-    ${FRAIS}=    Evaluate    round((${TOT2}/12.5),2)
-    ${FRAIS1}=    Get Text    ${FRAIS_CHECKOUT}
-    ${FRAIS2}=    Evaluate    ${FRAIS1}[6:]
-    Should Be Equal    round(${FRAIS},2)    round(${FRAIS2},2)
-    ${TOTAL_TOTAL}=    Evaluate    round(${TOTAL}+${FRAIS},2)
-    ${TOTAL_TOTAL1}=    Get Text    ${TOTAL_CHECKOUT}
-    ${TOTAL_TOTAL2}=    Evaluate    round(${TOTAL_TOTAL1}[8:],2)
-    Should Be Equal    ${TOTAL_TOTAL}    ${TOTAL_TOTAL2}
-    Sleep    1s
-    Click Element    ${BOUTON_FINISH}
-    Wait Until Element Is Visible    ${TITLE_VALIDE}    10s
-    Wait Until Element Contains    ${TITLE_VALIDE}    ${MESSAGE_TILE_VALIDE}    10s
+    Place Order   ${FIRSTNAME}    ${LASTNAME}    ${POSTALCODE}
+    Close The Site
 
-Fermer Le Site
-    [Documentation]    Ferme le site
+Sort List
+    [Documentation]    Sort the list
+    [Arguments]    ${VALUE}
+    Select From List By Value    ${BUTTON_SORT}    ${VALUE}
+
+Add Product To Cart
+    [Documentation]    Add a product to the cart
+    [Arguments]    ${PRODUCT}
+    ${ADD_BUTTON}=    Set Variable    //div[@class='inventory_list']/div[${PRODUCT}]//button[@class='btn_primary btn_inventory']
+    Wait Until Element Is Visible    ${ADD_BUTTON}    10s
+    Click Element    ${ADD_BUTTON}
+    Sleep    1s
+
+Open Cart
+    [Documentation]    Open the cart
+    Click Element    ${BUTTON_CART}
+
+Count Cart Quantity
+    [Documentation]    Count the quantity of products in the cart
+    [Arguments]    ${PRODUCTS}
+    ${COUNTER}=    Set Variable    0
+    FOR    ${PRODUCT}    IN    @{PRODUCTS}
+        ${QUANTITY}=    Set Variable    //div[@class='cart_list']/div[@class='cart_item'][${PRODUCT}]//div[@class='cart_quantity']
+        Element Should Be Visible    ${QUANTITY}
+        ${qt}=    Get Text    ${QUANTITY}
+        ${COUNTER}=    Evaluate    ${COUNTER}+${qt}
+    END
+    RETURN    ${COUNTER}
+
+Place Order
+    [Documentation]    Place the order and verify the amounts
+    [Arguments]    ${FIRSTNAME}    ${LASTNAME}    ${POSTALCODE}
+    Fill In Order Fields    ${FIRSTNAME}    ${LASTNAME}    ${POSTALCODE}
+    Verify Order Amounts
+    Sleep    1s
+    Click Element    ${BUTTON_FINISH}
+    Verify Order Completion
+
+Fill In Order Fields
+    [Documentation]    Place the order and verify the amounts
+    [Arguments]    ${FIRSTNAME}    ${LASTNAME}    ${POSTALCODE}
+    Click Element    ${BUTTON_CHECKOUT}
+    Sleep    1s
+    Input Text    ${FIELD_FIRSTNAME}    ${FIRSTNAME}
+    Input Text    ${FIELD_LASTNAME}    ${LASTNAME}
+    Input Text    ${FIELD_POSTALCODE}    ${POSTALCODE}
+    Click Button    ${BUTTON_CONTINUE}
+
+Verify Order Completion
+    [Documentation]    Verify order completion
+    Wait Until Element Is Visible    ${TITLE_SUCCESS}    10s
+    Wait Until Element Contains    ${TITLE_SUCCESS}    ${MESSAGE_TITLE_SUCCESS}    10s
+
+Verify Order Amounts
+    [Documentation]    Verify order amounts
+    ${TOTAL}=    Set Variable    0
+    ${SUBTOTAL}=    Get Text    ${SUBTOTAL_CHECKOUT}
+    ${SUBTOTAL_MODIFIED}=    Evaluate    ${SUBTOTAL}[13:]
+    FOR    ${PRODUCT}    IN    @{PRODUCTS}
+        ${PRICE}=    Set Variable    //div[@class='cart_list']/div[@class='cart_item'][${PRODUCT}]//div[@class='cart_item_label']//div[@class='inventory_item_price']
+        ${PRICE_VALUE}=    Get Text    ${PRICE}
+        Element Should Be Visible    ${PRICE}
+        ${PRICE_MODIFIED}=    Evaluate    ${PRICE_VALUE}[1:]
+        ${TOTAL}=    Evaluate    ${TOTAL}+${PRICE_MODIFIED}
+    END
+    Should Be Equal    (integer)${SUBTOTAL_MODIFIED}    (integer)${TOTAL}
+    ${TAX}=    Evaluate    round((${SUBTOTAL_MODIFIED}/12.5),2)
+    ${TAX_TEXT}=    Get Text    ${TAX_CHECKOUT}
+    ${TAX_MODIFIED}=    Evaluate    ${TAX_TEXT}[6:]
+    Should Be Equal    round(${TAX},2)    round(${TAX_MODIFIED},2)
+    ${GRAND_TOTAL}=    Evaluate    round(${TOTAL}+${TAX},2)
+    ${GRAND_TOTAL_TEXT}=    Get Text    ${TOTAL_CHECKOUT}
+    ${GRAND_TOTAL_MODIFIED}=    Evaluate    round(${GRAND_TOTAL_TEXT}[8:],2)
+    Should Be Equal    ${GRAND_TOTAL}    ${GRAND_TOTAL_MODIFIED}
+
+Close The Site
+    [Documentation]    Close the site
     Close Browser
